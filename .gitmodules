@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/OAStackView"]
+	path = Carthage/Checkouts/OAStackView
+	url = https://github.com/oarrabi/OAStackView.git
