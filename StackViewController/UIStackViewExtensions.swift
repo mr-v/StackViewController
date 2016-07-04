@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import OAStackView
 
-extension UIStackView {
+extension OAStackView {
     public func removeAllArrangedSubviews() {
         arrangedSubviews.forEach {
             $0.removeFromSuperview()

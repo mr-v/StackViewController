@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OAStackView
 
 /// A container for a `UIStackView` that adds some additional capabilities, including
 /// being able to change the background color, assigning a background view, and
@@ -19,7 +20,7 @@ public class StackViewContainer: UIView, UIScrollViewDelegate {
     /// via the stack view. The content view collection accessors on
     /// `StackViewContainer` should be used instead. It is also not safe to modify
     /// the `axis` property. `StackViewContainer.axis` should be set instead.
-    public let stackView: UIStackView
+    public let stackView: OAStackView
     
     private let backgroundColorContainerView = UIView(frame: CGRectZero)
     
@@ -110,7 +111,7 @@ public class StackViewContainer: UIView, UIScrollViewDelegate {
     /// Initializes an instance of `StackViewContainer` using an existing
     /// instance of `UIStackView`. Any existing arranged subviews of the stack
     /// view are removed prior to `StackViewContainer` taking ownership of it.
-    public init(stackView: UIStackView) {
+    public init(stackView: OAStackView) {
         stackView.removeAllArrangedSubviews()
         self.stackView = stackView
         self.scrollView = AutoScrollView(frame: CGRectZero)
@@ -236,9 +237,9 @@ public class StackViewContainer: UIView, UIScrollViewDelegate {
         )
         items.insert(item, atIndex: index)
         _contentViews.insert(view, atIndex: index)
-        stackView.insertArrangedSubview(view, atIndex: stackInsertionIndex)
+        stackView.insertArrangedSubview(view, atIndex: UInt(stackInsertionIndex))
         if let separatorView = separatorView {
-            stackView.insertArrangedSubview(separatorView, atIndex: stackInsertionIndex.successor())
+            stackView.insertArrangedSubview(separatorView, atIndex: UInt(stackInsertionIndex.successor()))
         }
     }
     
@@ -319,7 +320,7 @@ public class StackViewContainer: UIView, UIScrollViewDelegate {
             && item.separatorView == nil {
             if let separatorView = createSeparatorView() {
                 item.separatorView = separatorView
-                stackView.insertArrangedSubview(separatorView, atIndex: index.successor())
+                stackView.insertArrangedSubview(separatorView, atIndex: UInt(index.successor()))
             }
         } else if let separatorView = item.separatorView where !canShowSeparator {
             stackView.removeArrangedSubview(separatorView)
@@ -377,8 +378,8 @@ public class StackViewContainer: UIView, UIScrollViewDelegate {
     }
 }
 
-private func constructDefaultStackView() -> UIStackView {
-    let stackView = UIStackView(frame: CGRectZero)
+private func constructDefaultStackView() -> OAStackView {
+    let stackView = OAStackView(frame: CGRectZero)
     stackView.axis = .Vertical
     return stackView
 }

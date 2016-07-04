@@ -8,6 +8,7 @@
 
 import UIKit
 import StackViewController
+import OAStackView
 
 class ImageAttachmentView: UIView, ImageThumbnailViewDelegate {
     private struct Layout {
@@ -24,7 +25,7 @@ class ImageAttachmentView: UIView, ImageThumbnailViewDelegate {
         attachButton.setBackgroundImage(UIImage(named: "attach-button")!, forState: .Normal)
         attachButton.adjustsImageWhenHighlighted = true
         
-        let stackView = UIStackView(frame: CGRectZero)
+        let stackView = OAStackView(frame: CGRectZero)
         stackView.axis = .Horizontal
         stackView.alignment = .Bottom
         

@@ -29,6 +29,7 @@
 		72DE37271CCDC769009CAE32 /* ImageAttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE37261CCDC769009CAE32 /* ImageAttachmentViewController.swift */; };
 		72DE37291CCDCCB6009CAE32 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE37281CCDCCB6009CAE32 /* UIStackViewExtensions.swift */; };
 		72DE372B1CCDD998009CAE32 /* ImageThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE372A1CCDD998009CAE32 /* ImageThumbnailView.swift */; };
+		96D400A71D2A4652003FB2AA /* OAStackView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D400A51D2A45F1003FB2AA /* OAStackView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 72D193E31CC3576A00645F83;
 			remoteInfo = StackViewController;
+		};
+		96D400A41D2A45F1003FB2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96D400A01D2A45F1003FB2AA /* OAStackView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8298C9231B4188700006C53E;
+			remoteInfo = OAStackView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -88,6 +96,7 @@
 		72DE37261CCDC769009CAE32 /* ImageAttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachmentViewController.swift; sourceTree = "<group>"; };
 		72DE37281CCDCCB6009CAE32 /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 		72DE372A1CCDD998009CAE32 /* ImageThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageThumbnailView.swift; sourceTree = "<group>"; };
+		96D400A01D2A45F1003FB2AA /* OAStackView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAStackView.xcodeproj; path = Carthage/Checkouts/OAStackView/OAStackView.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D400A71D2A4652003FB2AA /* OAStackView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +130,7 @@
 		72B21E4C1CBC34EF00724EB8 = {
 			isa = PBXGroup;
 			children = (
+				96D400A01D2A45F1003FB2AA /* OAStackView.xcodeproj */,
 				72D193E51CC3576A00645F83 /* StackViewController */,
 				72D193F11CC3576A00645F83 /* StackViewControllerTests */,
 				72D1940C1CC357A100645F83 /* Example */,
@@ -178,6 +189,14 @@
 				72DE372A1CCDD998009CAE32 /* ImageThumbnailView.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		96D400A11D2A45F1003FB2AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96D400A51D2A45F1003FB2AA /* OAStackView.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +300,12 @@
 			mainGroup = 72B21E4C1CBC34EF00724EB8;
 			productRefGroup = 72B21E561CBC34EF00724EB8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96D400A11D2A45F1003FB2AA /* Products */;
+					ProjectRef = 96D400A01D2A45F1003FB2AA /* OAStackView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				72D193E31CC3576A00645F83 /* StackViewController */,
@@ -289,6 +314,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		96D400A51D2A45F1003FB2AA /* OAStackView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAStackView.framework;
+			remoteRef = 96D400A41D2A45F1003FB2AA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		72D193E21CC3576A00645F83 /* Resources */ = {
